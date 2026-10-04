@@ -853,6 +853,42 @@ elif contenido ==("Ítem 9"):
         )
 
         st.success("✅ Archivo cargado correctamente.")
+
+        st.subheader("🔎 Filtros")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            equipos = st.multiselect(
+                "Team",
+                sorted(df["team"].dropna().unique())
+            )
+
+        with col2:
+            posiciones = st.multiselect(
+                "Position",
+                sorted(df["position"].dropna().unique())
+            )
+
+        col3, col4 = st.columns(2)
+
+        with col3:
+            fases = st.multiselect(
+                "Tournament stage",
+                sorted(df["tournament_stage"].dropna().unique())
+            )
+
+        with col4:
+            resultados = st.multiselect(
+                "Match result",
+                sorted(df["match_result"].dropna().unique())
+            )
+
+        jugadores = st.multiselect(
+            "Player name",
+            sorted(df["player_name"].dropna().unique())
+        )
+
         
 
    
