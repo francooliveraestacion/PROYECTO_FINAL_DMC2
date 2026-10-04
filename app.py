@@ -156,7 +156,7 @@ elif contenido ==("Ítem 2"):
                 else:
                     variables_categoricas.append(columna)
             return variables_numericas, variables_categoricas
-         numericas, categoricas = clasificar_variables(df)
+        numericas, categoricas = clasificar_variables(df)
        
 
   
