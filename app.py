@@ -1271,9 +1271,6 @@ else:
             "analizados permiten apoyar la evaluación del desempeño "
             "mediante información descriptiva, sin realizar predicciones."
     )
-else:
-        st.warning(
-            "⚠️ Debes cargar el archivo CSV para realizar el Ítem 10."
-        )
+
 
 
