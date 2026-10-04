@@ -549,6 +549,165 @@ elif contenido ==("Ítem 6"):
 
 elif contenido ==("Ítem 7"):
     st.write("✅Te encuentras en el Ítem 7: Análisis bivariado (numérico vs categórico)")
+    st.write(
+        "En este ítem se compararán variables numéricas según diferentes "
+        "variables categóricas para identificar diferencias entre grupos."
+    )
+
+    archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item7"
+    )
+    if archivo is not None:
+
+        df = pd.read_csv(archivo)
+
+        st.success("✅ Archivo cargado correctamente.")
+
+        st.subheader("1️⃣ Player rating según posición")
+
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+        sns.boxplot(
+            data=df,
+            x="position",
+            y="player_rating",
+            ax=ax )
+
+        ax.set_title("Player rating según posición")
+        ax.set_xlabel("Posición")
+        ax.set_ylabel("Player rating")
+
+        plt.xticks(rotation=45)
+
+        st.pyplot(fig)
+
+        plt.close(fig)
+
+        st.write(
+            "Este gráfico permite comparar la distribución del rating "
+            "de los jugadores según su posición. La línea central de "
+            "cada caja representa la mediana.")
+      
+        st.subheader("2️⃣ Performance score según resultado del partido")
+
+        fig, ax = plt.subplots(figsize=(8, 5))
+
+        sns.boxplot(
+            data=df,
+            x="match_result",
+            y="performance_score",
+            ax=ax
+        )
+
+        ax.set_title("Performance score según resultado del partido")
+        ax.set_xlabel("Resultado del partido")
+        ax.set_ylabel("Performance score")
+
+        st.pyplot(fig)
+
+        plt.close(fig)
+
+        st.write(
+            "Este análisis permite comparar el nivel de performance "
+            "de los jugadores según el resultado obtenido en el partido."
+        ) st.subheader("2️⃣ Performance score según resultado del partido")
+
+        fig, ax = plt.subplots(figsize=(8, 5))
+
+        sns.boxplot(
+            data=df,
+            x="match_result",
+            y="performance_score",
+            ax=ax
+        )
+
+        ax.set_title("Performance score según resultado del partido")
+        ax.set_xlabel("Resultado del partido")
+        ax.set_ylabel("Performance score")
+
+        st.pyplot(fig)
+
+        plt.close(fig)
+
+        st.write(
+            "Este análisis permite comparar el nivel de performance "
+            "de los jugadores según el resultado obtenido en el partido."
+        )
+
+        st.subheader("3️⃣ Distancia recorrida según posición")
+
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+        sns.boxplot(
+            data=df,
+            x="position",
+            y="distance_covered_km",
+            ax=ax
+        )
+
+        ax.set_title("Distancia recorrida según posición")
+        ax.set_xlabel("Posición")
+        ax.set_ylabel("Distancia recorrida (km)")
+
+        plt.xticks(rotation=45)
+
+        st.pyplot(fig)
+
+        plt.close(fig)
+
+        st.write(
+            "La distancia recorrida permite observar diferencias en "
+            "el esfuerzo físico registrado entre las diferentes posiciones."
+        )
+
+        st.subheader("4️⃣ Resumen de las comparaciones")
+
+        resumen_position = df.groupby("position")[
+            ["player_rating", "distance_covered_km"]
+        ].median().round(2)
+
+        st.write("**Medianas de player rating y distancia recorrida por posición:**")
+
+        st.dataframe(
+            resumen_position,
+            use_container_width=True
+        )
+
+        resumen_resultado = df.groupby("match_result")[
+            "performance_score"
+        ].median().round(2)
+
+        st.write("**Mediana de performance score según resultado:**")
+
+        st.dataframe(
+            resumen_resultado,
+            use_container_width=True
+        )
+        st.subheader("5️⃣ Interpretación")
+
+        st.write(
+            """
+            **Player rating:** permite identificar cómo se distribuye
+            el rating de los jugadores según su posición.
+
+            **Performance score:** permite comparar el desempeño de los
+            jugadores según el resultado del partido.
+
+            **Distancia recorrida:** permite observar diferencias en la
+            actividad física registrada entre posiciones.
+
+            Los boxplots permiten observar la mediana, la dispersión
+            de los datos y posibles valores extremos. Las diferencias
+            encontradas deben interpretarse considerando las funciones
+            específicas de cada posición.
+            """
+        )
+     else:
+        st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 7.")
+      
+
 elif contenido ==("Ítem 8"):
     st.write("✅Te encuentras en el Ítem 8: Análisis bivariado (categórico vs categórico)")
 elif contenido ==("Ítem 9"):
