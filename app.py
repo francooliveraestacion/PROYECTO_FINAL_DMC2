@@ -910,7 +910,7 @@ elif contenido ==("Ítem 9"):
                 resultados
             )
 
-       jugadores = sorted(
+        jugadores = sorted(
             df["player_name"].dropna().unique().tolist()
         )
 
