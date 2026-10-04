@@ -319,7 +319,7 @@ elif contenido ==("Ítem 4"):
 
         tabla_grafico = tabla_faltantes[
             tabla_faltantes["Valores faltantes"] > 0 ]
-         if len(tabla_grafico) > 0:
+        if len(tabla_grafico) > 0:
 
             st.bar_chart( tabla_grafico.set_index("Variable")[ "Valores faltantes"] )
 
