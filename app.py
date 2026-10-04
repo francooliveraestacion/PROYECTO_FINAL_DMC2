@@ -1134,7 +1134,7 @@ elif contenido ==("Ítem 9"):
             )
     st.subheader("📅 6. Análisis temporal")
 
-        if df["match_date"].notna().sum() > 0:
+    if df["match_date"].notna().sum() > 0:
 
             fecha_min = df["match_date"].min().date()
             fecha_max = df["match_date"].max().date()
