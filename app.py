@@ -178,7 +178,7 @@ elif contenido ==("Ítem 2"):
         with col2:
             st.metric("Variables categóricas",
                 len(categoricas))
-   else:
+  else:
         st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 2.")        
 elif contenido ==("Ítem 3"):
     st.write("✅Te encuentras en el Ítem 3: Estadísticas descriptivas")
