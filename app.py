@@ -140,6 +140,29 @@ elif contenido ==("Ítem 1"):
   
 elif contenido ==("Ítem 2"):
   st.write("✅Te encuentras en el Ítem 2: Clasificación de variables")
+  st.write(
+        "En este ítem se identificarán las variables numéricas y categóricas "
+        "del dataset mediante una función personalizada."
+    )
+  archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item2")
+  if archivo is not None:
+        df = pd.read_csv(archivo)
+        st.success("✅ Archivo cargado correctamente.")
+    
+        def clasificar_variables(dataframe):
+            variables_numericas = []
+            variables_categoricas = []
+            for columna in dataframe.columns:
+
+                if pd.api.types.is_numeric_dtype(dataframe[columna]):
+                    variables_numericas.append(columna)
+                else:
+                    variables_categoricas.append(columna)
+            return variables_numericas, variables_categoricas
+       
 
   
 elif contenido ==("Ítem 3"):
