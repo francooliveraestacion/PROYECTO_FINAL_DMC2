@@ -10,12 +10,12 @@ contenido=st.sidebar.selectbox("",["Home",
                                    "Ítem 1",
                                    "Ítem 2",
                                    "Ítem 4",
-                                  "Ítem 5",
-                                  "Ítem 6",
-                                  "Ítem 7",
-                                  "Ítem 8",
-                                  "Ítem 9",
-                                  "Ítem 10"])
+                                   "Ítem 5",
+                                   "Ítem 6",
+                                   "Ítem 7",
+                                   "Ítem 8",
+                                   "Ítem 9",
+                                   "Ítem 10"])
 if contenido =="Home":
   st.write("Te encuentras en el modulo de home")
   st.subheader("Estudiante")
