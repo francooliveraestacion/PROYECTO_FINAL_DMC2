@@ -852,18 +852,8 @@ elif contenido ==("Ítem 9"):
             errors="coerce"
         )
 
-        st.success("✅ Archivo cargado correctamente.")if archivo is not None:
-
-        df = pd.read_csv(archivo)
-
-        df["match_date"] = pd.to_datetime(
-            df["match_date"],
-            errors="coerce"
-        )
-
         st.success("✅ Archivo cargado correctamente.")
-
-
+        
 
    
 
