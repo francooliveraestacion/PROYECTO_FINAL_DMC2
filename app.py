@@ -42,11 +42,7 @@ de información y el seguimiento de los principales indicadores.
 elif contenido ==("Modulo 2"):
   st.write("✅Te encuentras en el modulo 2")
   st.set_page_config( page_title="FIFA World Cup 2026",page_icon="⚽",layout="wide")
-  st.title("⚽ FIFA World Cup 2026")
-  st.subheader("Análisis Exploratorio de Datos")
-  st.header("📂 Módulo 2: Carga del Dataset")
-  st.write( "Carga el archivo CSV para comenzar con el análisis exploratorio.")
-  archivo = st.file_uploader("Selecciona el archivo CSV",  type=["csv"])
+  
   
  
     
