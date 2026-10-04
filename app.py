@@ -47,6 +47,7 @@ elif contenido ==("Modulo 2"):
   st.header("📂 Módulo 2: Carga del Dataset")
   st.write( "Carga el archivo CSV para comenzar con el análisis exploratorio.")
   archivo = st.file_uploader("Selecciona el archivo CSV",  type=["csv"])
+  
  
     
   
