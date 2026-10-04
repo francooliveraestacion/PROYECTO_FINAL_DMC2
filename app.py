@@ -1261,26 +1261,22 @@ else:
             visualizaciones interactivas para facilitar el seguimiento
             y apoyar la toma de decisiones basada en datos.
             """
-        )
-    st.subheader("📝 5. Conclusión del EDA")
+    )
+    st.subheader("📝 5. Conclusión")
 
     st.write(
-            """
-            El análisis exploratorio permitió identificar diferencias
-            en el rendimiento técnico y físico de los jugadores según
-            diferentes características del partido. Los resultados
-            muestran la importancia de analizar conjuntamente indicadores
-            de rendimiento, posición y actividad física. Estos hallazgos
-            pueden utilizarse como apoyo para la evaluación y seguimiento
-            de jugadores, sin realizar predicciones sobre resultados
-            futuros.
-            """
+            "El análisis exploratorio permitió identificar diferencias "
+            "en el rendimiento técnico y físico de los jugadores según "
+            "su posición y el resultado del partido. Los indicadores "
+            "analizados permiten apoyar la evaluación y seguimiento "
+            "del desempeño de los jugadores mediante información "
+            "descriptiva, sin realizar predicciones."
         )
-   else:
+
+    else:
 
         st.warning(
             "⚠️ Debes cargar el archivo CSV para realizar el Ítem 10."
         )
-
 
 
