@@ -1131,6 +1131,25 @@ else:
             "Distancia recorrida",
             round(df["distance_covered_km"].mean(), 2)
         )
+        st.subheader("📈 Visualización resumen")
+
+        fig, ax = plt.subplots(figsize=(9, 5))
+
+        sns.boxplot(
+            data=df,
+            x="position",
+            y="player_rating",
+            ax=ax
+        )
+
+        ax.set_title("Player Rating según posición")
+        ax.set_xlabel("Posición")
+        ax.set_ylabel("Player Rating")
+
+        plt.xticks(rotation=45)
+
+        st.pyplot(fig)
+        plt.close(fig)
 
 
 
