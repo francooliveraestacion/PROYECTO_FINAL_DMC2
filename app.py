@@ -726,22 +726,6 @@ elif contenido ==("Ítem 8"):
         df = pd.read_csv(archivo)
 
         st.success("✅ Archivo cargado correctamente.")
-        st.write(
-        "En este ítem se analizarán las relaciones entre dos variables "
-        "categóricas mediante tablas de frecuencia y gráficos de barras."
-    )
-
-    archivo = st.file_uploader(
-        "Selecciona el archivo CSV",
-        type=["csv"],
-        key="archivo_item8"
-    )
-
-    if archivo is not None:
-
-        df = pd.read_csv(archivo)
-
-        st.success("✅ Archivo cargado correctamente.")
         st.subheader("1️⃣ Posición según fase del torneo")
 
         tabla_position_stage = pd.crosstab(
