@@ -41,7 +41,9 @@ de información y el seguimiento de los principales indicadores.
 📉 Matplotlib
 """)
 elif contenido ==("Modulo 2"):
+  st.write("✅Te encuentras en el modulo 2")
 elif contenido ==("Ítem 1"):
+  st.write("✅Te encuentras en el Ítem 1: Información general del dataset")
 elif contenido ==("Ítem 2"):
 elif contenido ==("Ítem 3"):
 elif contenido ==("Ítem 4"):
