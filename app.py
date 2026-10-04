@@ -157,9 +157,29 @@ elif contenido ==("Ítem 2"):
                     variables_categoricas.append(columna)
             return variables_numericas, variables_categoricas
         numericas, categoricas = clasificar_variables(df)
-       
+        st.subheader("🔢 Variables numéricas")
+        st.write(f"Cantidad de variables numéricas: **{len(numericas)}**")
+        st.dataframe(
+            pd.DataFrame({"Variable numérica": numericas}),
+            use_container_width=True )
+        st.subheader("🔤 Variables categóricas")
+        st.write(f"Cantidad de variables categóricas: **{len(categoricas)}**")
+        st.dataframe(
+            pd.DataFrame({"Variable categórica": categoricas}),
+            use_container_width=True)
+        st.subheader("📈 Conteo de variables por tipo")
 
-  
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.metric("Variables numéricas",
+                len(numericas) )
+
+        with col2:
+            st.metric("Variables categóricas",
+                len(categoricas))
+    else:
+        st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 2.")        
 elif contenido ==("Ítem 3"):
     st.write("✅Te encuentras en el Ítem 3: Estadísticas descriptivas")
 elif contenido ==("Ítem 4"):
