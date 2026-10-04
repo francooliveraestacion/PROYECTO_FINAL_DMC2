@@ -836,5 +836,32 @@ elif contenido ==("Ítem 8"):
       
 elif contenido ==("Ítem 9"):
     st.write("✅Te encuentras en el Ítem 9: Análisis basado en parámetros seleccionados")
+    st.write(
+        "En este ítem el usuario podrá seleccionar diferentes filtros "
+        "y métricas para realizar un análisis dinámico del dataset."
+    )
+
+    archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item9"
+    )
+
+     if archivo is not None:
+
+        df = pd.read_csv(archivo)
+
+        st.success("✅ Archivo cargado correctamente.")
+
+        if "match_date" in df.columns:
+
+            df["match_date"] = pd.to_datetime(
+                df["match_date"],
+                errors="coerce"
+            )
+          
+        st.subheader("🔎 1. Filtros del análisis")
+
+        col1, col2 = st.columns(2)
 else:
     st.write("✅Te encuentras en el Ítem 10: Hallazgos clave")
