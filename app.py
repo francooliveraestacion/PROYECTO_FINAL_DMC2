@@ -85,6 +85,13 @@ elif contenido ==("Ítem 1"):
 
   st.text(informacion)
   
+  st.markdown("### 2️⃣ Tipos de datos")
+
+  tipos = pd.DataFrame({ "Variable": df.columns, "Tipo de dato": df.dtypes.astype(str).values})
+
+  st.dataframe(tipos,use_container_width=True)
+  
+  
 elif contenido ==("Ítem 2"):
   st.write("✅Te encuentras en el Ítem 2: Clasificación de variables")
 
