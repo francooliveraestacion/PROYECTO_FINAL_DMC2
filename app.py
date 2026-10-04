@@ -980,6 +980,32 @@ elif contenido ==("Ítem 9"):
             opciones
         )
 
+        st.subheader("📋 Resultado")
+
+        st.metric(
+            "Registros encontrados",
+            len(df_filtrado)
+        )
+
+        if len(df_filtrado) == 0:
+
+            st.warning(
+                "⚠️ No existen registros con los filtros seleccionados."
+            )
+
+        elif metricas:
+
+            columnas = [
+                "player_name",
+                "team",
+                "position"
+            ] + metricas
+
+            st.dataframe(
+                df_filtrado[columnas],
+                use_container_width=True
+            )
+
 
         
 
