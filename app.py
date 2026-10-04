@@ -1006,6 +1006,54 @@ elif contenido ==("Ítem 9"):
                 use_container_width=True
             )
 
+            if len(metricas) == 1:
+
+                metrica = metricas[0]
+
+                promedio = (
+                    df_filtrado
+                    .groupby("player_name")[metrica]
+                    .mean()
+                    .dropna()
+                    .sort_values(ascending=False)
+                    .head(15)
+                )
+
+                if not promedio.empty:
+
+                    fig, ax = plt.subplots(figsize=(10, 5))
+
+                    promedio.plot(
+                        kind="bar",
+                        ax=ax
+                    )
+
+                    ax.set_title(
+                        f"Promedio de {metrica} por jugador"
+                    )
+
+                    ax.set_xlabel("Jugador")
+                    ax.set_ylabel(metrica)
+
+                    plt.xticks(rotation=75)
+
+                    st.pyplot(fig)
+
+                    plt.close(fig)
+
+            else:
+
+                st.info(
+                    "Selecciona una sola métrica para mostrar el gráfico."
+                )
+
+        else:
+
+            st.info(
+                "Selecciona al menos una métrica para realizar el análisis."
+            )
+
+
 
         
 
