@@ -3,7 +3,6 @@ import streamlit as st
 
 
 st.title("👨🏻‍💻Proyecto Individual📈")
-st.sidebar.image("dmvc.png",width=1100)
 st.sidebar.title("🏡Contenido")
 contenido=st.sidebar.selectbox("",["Home",
                                    "Módulo 2",
