@@ -420,7 +420,7 @@ elif contenido ==("Ítem 5"):
 
         plt.close(fig)
 
-         st.subheader("3️⃣ Interpretación visual")
+        st.subheader("3️⃣ Interpretación visual")
 
         st.write(
             """
