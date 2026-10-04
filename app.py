@@ -4,7 +4,6 @@ import io
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 st.title("⚽ FIFA World Cup 2026")
 st.sidebar.title("🏡Contenido")
 contenido=st.sidebar.selectbox("",["Home",
