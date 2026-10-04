@@ -400,6 +400,25 @@ elif contenido ==("Ítem 5"):
         variable_posicion = st.selectbox(
             "Selecciona una variable:",
             variables)
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+        sns.histplot(
+            data=df,
+            x=variable_posicion,
+            hue="position",
+            bins=20,
+            kde=True,
+            element="step",
+            common_norm=False,
+            ax=ax )
+        ax.set_title(f"Distribución de {variable_posicion} según posición")
+
+        ax.set_xlabel(variable_posicion)
+        ax.set_ylabel("Frecuencia")
+
+        st.pyplot(fig)
+
+        plt.close(fig)
        
 elif contenido ==("Ítem 6"):
     st.write("✅Te encuentras en el Ítem 6: Análisis de variables categóricas")
