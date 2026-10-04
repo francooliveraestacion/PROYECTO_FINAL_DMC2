@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import io
 
 
 st.title("⚽ FIFA World Cup 2026")
@@ -69,13 +70,69 @@ elif contenido ==("Ítem 1"):
   st.write("✅Te encuentras en el Ítem 1: Información general del dataset")
   st.write(
         "En este ítem se revisará la información general del dataset, "
-        "los tipos de datos, los valores nulos y los registros duplicados."
-    )
+        "los tipos de datos, los valores nulos y los registros duplicados." )
   archivo = st.file_uploader(
         "Selecciona el archivo CSV",
         type=["csv"],
-        key="archivo_item1"
-    )
+        key="archivo_item1")
+  if archivo is not None:
+        df = pd.read_csv(archivo)
+        st.success("✅ Archivo cargado correctamente.")
+        st.subheader("1️⃣ Información general")
+        buffer = io.StringIO()
+        df.info(buf=buffer)
+        informacion = buffer.getvalue()
+
+        st.text(informacion)
+        st.subheader("2️⃣ Tipos de datos de las variables")
+
+        tabla_tipos = pd.DataFrame({
+            "Variable": df.columns,
+            "Tipo de dato": df.dtypes.astype(str).values})
+
+        st.dataframe(
+            tabla_tipos,
+            use_container_width=True)
+    
+        st.subheader("3️⃣ Valores nulos")
+
+        nulos = df.isnull().sum()
+
+        tabla_nulos = pd.DataFrame({
+            "Variable": nulos.index,
+            "Valores nulos": nulos.values})
+
+        st.dataframe(
+            tabla_nulos,
+            use_container_width=True)
+        st.subheader("4️⃣ Registros duplicados")
+
+        duplicados = df.duplicated().sum()
+
+        col1, col2 = st.columns(2)
+        with col1:
+            st.metric(
+                "Registros duplicados",
+                duplicados
+            )
+
+        with col2:
+            st.metric(
+                "Registros no duplicados",
+                len(df) - duplicados
+            )
+
+        if duplicados == 0:
+            st.success("✅ No se encontraron registros duplicados.")
+        else:
+            st.warning(
+             f"⚠️ Se encontraron {duplicados} registros duplicados."
+            )
+    else:
+        st.warning("⚠️ Debes cargar el archivo CSV para realizar el Ítem 1.")
+    
+    
+    
   
 
   
