@@ -542,7 +542,7 @@ elif contenido ==("Ítem 6"):
         st.write(
             f"La categoría con mayor frecuencia es **{categoria_mayor}**, "
             f"con **{cantidad_mayor} registros**.")
-  else:
+   else:
 
         st.warning("⚠️ Debes cargar el archivo CSV para realizar el Ítem 6.")
 
