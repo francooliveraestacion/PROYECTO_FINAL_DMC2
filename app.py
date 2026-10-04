@@ -1108,6 +1108,30 @@ else:
         df = pd.read_csv(archivo)
 
         st.success("✅ Archivo cargado correctamente.")
+        st.subheader("📊 Indicadores principales")
+
+        c1, c2, c3, c4 = st.columns(4)
+
+        c1.metric(
+            "Player Rating",
+            round(df["player_rating"].mean(), 2)
+        )
+
+        c2.metric(
+            "Performance Score",
+            round(df["performance_score"].mean(), 2)
+        )
+
+        c3.metric(
+            "Velocidad máxima",
+            round(df["top_speed_kmh"].mean(), 2)
+        )
+
+        c4.metric(
+            "Distancia recorrida",
+            round(df["distance_covered_km"].mean(), 2)
+        )
+
 
 
 
