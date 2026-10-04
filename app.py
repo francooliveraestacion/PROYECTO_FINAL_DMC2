@@ -1,5 +1,5 @@
 import streamlit as st
-
+import pandas as pd
 
 
 st.title("👨🏻‍💻Proyecto Individual📈")
@@ -41,6 +41,36 @@ de información y el seguimiento de los principales indicadores.
 """)
 elif contenido ==("Modulo 2"):
   st.write("✅Te encuentras en el modulo 2")
+  st.set_page_config( page_title="FIFA World Cup 2026",page_icon="⚽",layout="wide")
+  st.title("⚽ FIFA World Cup 2026")
+  st.subheader("Análisis Exploratorio de Datos")'
+  st.header("📂 Módulo 2: Carga del Dataset")
+  st.write( "Carga el archivo CSV para comenzar con el análisis exploratorio.")
+  archivo = st.file_uploader("Selecciona el archivo CSV",  type=["csv"])
+  if archivo is not None:
+    try:
+        df = pd.read_csv(archivo)
+        st.success("✅ El archivo fue cargado correctamente.")
+      
+        st.subheader("👀 Vista previa del dataset")
+        st.dataframe(
+            df.head(),
+            use_container_width=True
+        st.subheader("📐 Dimensiones del dataset")
+        filas, columnas = df.shape
+        col1, col2 = st.columns(2)
+
+        with col1:st.metric("Número de filas", filas)
+
+        with col2:st.metric("Número de columnas",columnas)
+      except Exception as e:
+
+        st.error( f"❌ Ocurrió un error al cargar el archivo: {e}")
+  else:
+    st.warning("⚠️ Debes cargar un archivo CSV antes de realizar cualquier análisis.")
+    
+  
+
 elif contenido ==("Ítem 1"):
   st.write("✅Te encuentras en el Ítem 1: Información general del dataset")
 elif contenido ==("Ítem 2"):
