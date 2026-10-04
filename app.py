@@ -1084,8 +1084,8 @@ elif contenido ==("Ítem 9"):
 
             st.info(
                 "ℹ️ Selecciona al menos una métrica para realizar "
-                "la comparación."
-            )st.subheader("📈 5. Comparación de jugadores")
+                "la comparación.")
+            st.subheader("📈 5. Comparación de jugadores")
 
             if len(metricas_seleccionadas) == 1:
 
