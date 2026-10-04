@@ -65,18 +65,26 @@ elif contenido ==("Módulo 2"):
   else:
     st.warning( "⚠️ Debes cargar un archivo CSV antes de realizar cualquier análisis.")
           
-      
-  
-
- 
-  
-  
- 
-    
-  
-
 elif contenido ==("Ítem 1"):
   st.write("✅Te encuentras en el Ítem 1: Información general del dataset")
+  st.write(
+    """
+    En este apartado se analiza la estructura general del dataset,
+    los tipos de datos, los valores nulos y los registros duplicados.
+    """
+)
+  st.markdown("### 1️⃣ Información general")
+
+  import io
+
+  buffer = io.StringIO()
+
+  df.info(buf=buffer)
+
+  informacion = buffer.getvalue()
+
+  st.text(informacion)
+  
 elif contenido ==("Ítem 2"):
   st.write("✅Te encuentras en el Ítem 2: Clasificación de variables")
 
