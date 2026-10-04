@@ -1189,10 +1189,10 @@ else:
             )
     st.subheader("🔎 3. Principales hallazgos")
 
-        rating_promedio = df["player_rating"].mean()
-        performance_promedio = df["performance_score"].mean()
-        velocidad_promedio = df["top_speed_kmh"].mean()
-        distancia_promedio = df["distance_covered_km"].mean()
+    rating_promedio = df["player_rating"].mean()
+    performance_promedio = df["performance_score"].mean()
+    velocidad_promedio = df["top_speed_kmh"].mean()
+    distancia_promedio = df["distance_covered_km"].mean()
 
         posicion_mejor_rating = (
             df.groupby("position")["player_rating"]
