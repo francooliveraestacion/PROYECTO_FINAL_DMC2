@@ -268,6 +268,19 @@ elif contenido ==("Ítem 3"):
 
 elif contenido ==("Ítem 4"):
     st.write("✅Te encuentras en el Ítem 4: Análisis de valores faltantes")
+    st.write(
+        "En este ítem se analizará la cantidad y el porcentaje "
+        "de valores faltantes en cada variable del dataset.")
+     archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item4" )
+      if archivo is not None:
+
+        df = pd.read_csv(archivo)
+
+        st.success("✅ Archivo cargado correctamente.")
+
 elif contenido ==("Ítem 5"):
     st.write("✅Te encuentras en el Ítem 5: Distribución de variables numéricas")
 elif contenido ==("Ítem 6"):
