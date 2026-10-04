@@ -475,7 +475,7 @@ elif contenido ==("Ítem 6"):
         variable = st.selectbox(
             "Selecciona una variable:",
             variables_categoricas)
-        t.subheader("2️⃣ Conteo de categorías")
+        st.subheader("2️⃣ Conteo de categorías")
 
         conteo = df[variable].value_counts()
 
