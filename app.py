@@ -1194,6 +1194,30 @@ else:
             f"**5.** El resultado con mayor Performance Score promedio es "
             f"**{mejor_resultado}**."
         )
+        st.subheader("💡 Recomendaciones")
+
+        st.write(
+            "• Evaluar a los jugadores considerando su posición."
+        )
+
+        st.write(
+            "• Complementar la evaluación con indicadores técnicos y físicos."
+        )
+
+        st.write(
+            "• Utilizar los resultados para apoyar la toma de decisiones."
+        )
+
+        st.write(
+            "• Analizar el rendimiento con información descriptiva, "
+            "sin realizar predicciones."
+        )
+
+    else:
+
+        st.warning(
+            "⚠️ Debes cargar el archivo CSV para realizar el Ítem 10."
+        )
 
 
 
