@@ -1160,7 +1160,7 @@ else:
 
             plt.close(fig)
 
-       st.subheader("📈 2. Indicadores principales")
+    st.subheader("📈 2. Indicadores principales")
 
         col1, col2, col3, col4 = st.columns(4)
 
