@@ -1102,7 +1102,7 @@ else:
         type=["csv"],
         key="archivo_item10"
     )
-     if archivo is not None:
+    if archivo is not None:
 
         df = pd.read_csv(archivo)
 
