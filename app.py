@@ -419,6 +419,32 @@ elif contenido ==("Ítem 5"):
         st.pyplot(fig)
 
         plt.close(fig)
+
+         st.subheader("3️⃣ Interpretación visual")
+
+        st.write(
+            """
+            **Forma:** permite observar si la distribución presenta una
+            forma aproximadamente simétrica, concentrada o irregular.
+
+            **Concentración:** permite identificar en qué rango se agrupan
+            la mayoría de los valores.
+
+            **Asimetría:** una distribución puede presentar mayor
+            concentración hacia un extremo y una cola hacia el otro.
+
+            **Valores extremos:** los valores alejados de la concentración
+            principal pueden representar posibles valores extremos y deben
+            revisarse considerando el contexto de cada variable.
+
+            **Posición:** las variables de rendimiento deben interpretarse
+            considerando la posición del jugador, debido a que las funciones
+            de un portero son diferentes a las de los jugadores de campo.
+            """
+        )
+   else:
+
+        st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 5.")
        
 elif contenido ==("Ítem 6"):
     st.write("✅Te encuentras en el Ítem 6: Análisis de variables categóricas")
