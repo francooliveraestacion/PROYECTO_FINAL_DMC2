@@ -899,7 +899,7 @@ elif contenido ==("Ítem 9"):
                 "Selecciona la fase del torneo:",
                 fases
             )
-       with col4:
+        with col4:
 
             resultados = sorted(
                 df["match_result"].dropna().unique().tolist()
