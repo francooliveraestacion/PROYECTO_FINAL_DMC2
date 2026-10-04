@@ -1268,13 +1268,10 @@ else:
             "El análisis exploratorio permitió identificar diferencias "
             "en el rendimiento técnico y físico de los jugadores según "
             "su posición y el resultado del partido. Los indicadores "
-            "analizados permiten apoyar la evaluación y seguimiento "
-            "del desempeño de los jugadores mediante información "
-            "descriptiva, sin realizar predicciones."
-        )
-
+            "analizados permiten apoyar la evaluación del desempeño "
+            "mediante información descriptiva, sin realizar predicciones."
+    )
 else:
-
         st.warning(
             "⚠️ Debes cargar el archivo CSV para realizar el Ítem 10."
         )
