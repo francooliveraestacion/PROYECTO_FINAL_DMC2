@@ -442,7 +442,7 @@ elif contenido ==("Ítem 5"):
             de un portero son diferentes a las de los jugadores de campo.
             """
         )
-   else:
+    else:
 
         st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 5.")
        
