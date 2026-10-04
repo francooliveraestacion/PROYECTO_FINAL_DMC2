@@ -1187,6 +1187,55 @@ else:
                 "Distancia recorrida promedio",
                 round(df["distance_covered_km"].mean(), 2)
             )
+    st.subheader("🔎 3. Principales hallazgos")
+
+        rating_promedio = df["player_rating"].mean()
+        performance_promedio = df["performance_score"].mean()
+        velocidad_promedio = df["top_speed_kmh"].mean()
+        distancia_promedio = df["distance_covered_km"].mean()
+
+        posicion_mejor_rating = (
+            df.groupby("position")["player_rating"]
+            .mean()
+            .idxmax()
+        )
+
+        posicion_mayor_distancia = (
+            df.groupby("position")["distance_covered_km"]
+            .mean()
+            .idxmax()
+        )
+
+        resultado_mayor_performance = (
+            df.groupby("match_result")["performance_score"]
+            .mean()
+            .idxmax()
+        )
+
+        st.write(
+            f"**1. Rating:** El Player Rating promedio registrado "
+            f"en el dataset es de **{rating_promedio:.2f}**."
+        )
+
+        st.write(
+            f"**2. Performance:** El Performance Score promedio es de "
+            f"**{performance_promedio:.2f}**."
+        )
+
+        st.write(
+            f"**3. Posición:** La posición con mayor Player Rating "
+            f"promedio es **{posicion_mejor_rating}**."
+        )
+
+        st.write(
+            f"**4. Actividad física:** La posición con mayor distancia "
+            f"recorrida promedio es **{posicion_mayor_distancia}**."
+        )
+
+        st.write(
+            f"**5. Resultado:** El resultado de partido asociado con "
+            f"mayor Performance Score promedio es **{resultado_mayor_performance}**."
+        )
 
 
 
