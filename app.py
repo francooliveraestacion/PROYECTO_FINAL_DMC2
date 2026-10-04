@@ -725,7 +725,8 @@ elif contenido ==("Ítem 8"):
 
         df = pd.read_csv(archivo)
 
-        st.success("✅ Archivo cargado correctamente.")st.write(
+        st.success("✅ Archivo cargado correctamente.")
+        st.write(
         "En este ítem se analizarán las relaciones entre dos variables "
         "categóricas mediante tablas de frecuencia y gráficos de barras."
     )
