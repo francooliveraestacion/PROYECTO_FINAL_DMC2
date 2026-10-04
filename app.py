@@ -1053,12 +1053,41 @@ elif contenido ==("Ítem 9"):
                 "Selecciona al menos una métrica para realizar el análisis."
             )
 
+        st.subheader("📅 Análisis temporal")
 
+        fechas_validas = df_filtrado["match_date"].dropna()
 
-        
+        if not fechas_validas.empty:
 
-   
+            fecha_inicio = fechas_validas.min().date()
+            fecha_fin = fechas_validas.max().date()
 
+            fecha = st.date_input(
+                "Selecciona una fecha:",
+                value=fecha_inicio,
+                min_value=fecha_inicio,
+                max_value=fecha_fin
+            )
+
+            datos_fecha = df_filtrado[
+                df_filtrado["match_date"].dt.date == fecha
+            ]
+
+            st.write(
+                f"Registros del {fecha}: **{len(datos_fecha)}**"
+            )
+
+        else:
+
+            st.info(
+                "No existen fechas disponibles con los filtros seleccionados."
+            )
+
+    else:
+
+        st.warning(
+            "⚠️ Debes cargar el archivo CSV para realizar el Ítem 9."
+        )
 
 else:
     st.write("✅Te encuentras en el Ítem 10: Hallazgos clave")
