@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 
-st.title("👨🏻‍💻Proyecto Individual📈")
+st.title("⚽ FIFA World Cup 2026")
 st.sidebar.title("🏡Contenido")
 contenido=st.sidebar.selectbox("",["Home",
                                    "Módulo 2",
