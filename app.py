@@ -916,6 +916,25 @@ elif contenido ==("Ítem 9"):
                 df_filtrado["player_name"].isin(jugadores)
             ]
 
+        st.subheader("🎚️ Rango de Player Rating")
+
+        minimo = float(df["player_rating"].min())
+        maximo = float(df["player_rating"].max())
+
+        rango = st.slider(
+            "Selecciona el rango:",
+            minimo,
+            maximo,
+            (minimo, maximo)
+        )
+
+        df_filtrado = df_filtrado[
+            df_filtrado["player_rating"].between(
+                rango[0],
+                rango[1]
+            )
+        ]
+
         
 
    
