@@ -710,6 +710,145 @@ elif contenido ==("Ítem 7"):
 
 elif contenido ==("Ítem 8"):
     st.write("✅Te encuentras en el Ítem 8: Análisis bivariado (categórico vs categórico)")
+    st.write(
+        "En este ítem se analizarán las relaciones entre dos variables "
+        "categóricas mediante tablas de frecuencia y gráficos de barras."
+    )
+
+    archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item8"
+    )
+
+    if archivo is not None:
+
+        df = pd.read_csv(archivo)
+
+        st.success("✅ Archivo cargado correctamente.")st.write(
+        "En este ítem se analizarán las relaciones entre dos variables "
+        "categóricas mediante tablas de frecuencia y gráficos de barras."
+    )
+
+    archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item8"
+    )
+
+    if archivo is not None:
+
+        df = pd.read_csv(archivo)
+
+        st.success("✅ Archivo cargado correctamente.")
+        st.subheader("1️⃣ Posición según fase del torneo")
+
+        tabla_position_stage = pd.crosstab(
+            df["position"],
+            df["tournament_stage"])
+
+        st.write("**Tabla de frecuencia:**")
+
+        st.dataframe(
+            tabla_position_stage,
+            use_container_width=True)
+
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+        tabla_position_stage.plot(
+            kind="bar",
+            ax=ax)
+
+        ax.set_title("Posición según fase del torneo")
+        ax.set_xlabel("Posición")
+        ax.set_ylabel("Cantidad de registros")
+
+        plt.xticks(rotation=45)
+
+        st.pyplot(fig)
+
+        plt.close(fig)
+
+        st.subheader("2️⃣ Equipo según resultado del partido")
+
+        tabla_team_resultado = pd.crosstab(
+            df["team"],
+            df["match_result"])
+
+        st.write("**Tabla de frecuencia:**")
+
+        st.dataframe(
+            tabla_team_resultado,
+            use_container_width=True)
+
+        fig, ax = plt.subplots(figsize=(12, 6))
+
+        tabla_team_resultado.plot(
+            kind="bar",
+            ax=ax)
+
+        ax.set_title("Equipo según resultado del partido")
+        ax.set_xlabel("Equipo")
+        ax.set_ylabel("Cantidad de registros")
+
+        plt.xticks(rotation=90)
+
+        st.pyplot(fig)
+
+        plt.close(fig)
+      
+        st.subheader("3️⃣ Pie preferido según posición")
+
+        tabla_pie_position = pd.crosstab(
+            df["preferred_foot"],
+            df["position"])
+
+        st.write("**Tabla de frecuencia:**")
+
+        st.dataframe(
+            tabla_pie_position,
+            use_container_width=True)
+
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+        tabla_pie_position.plot(
+            kind="bar",
+            ax=ax)
+
+        ax.set_title("Pie preferido según posición")
+        ax.set_xlabel("Pie preferido")
+        ax.set_ylabel("Cantidad de registros")
+
+        plt.xticks(rotation=0)
+
+        st.pyplot(fig)
+
+        plt.close(fig)
+
+        st.subheader("4️⃣ Interpretación de los resultados")
+
+        st.write(
+            """
+            **Position vs tournament_stage:** permite observar cómo se
+            distribuyen las posiciones de los jugadores en las diferentes
+            fases del torneo.
+
+            **Team vs match_result:** permite identificar la frecuencia
+            de los diferentes resultados de partido para cada equipo.
+
+            **Preferred_foot vs position:** permite observar la relación
+            entre el pie preferido de los jugadores y su posición.
+
+            Las tablas de frecuencia permiten conocer la cantidad de
+            registros que pertenecen a cada combinación de categorías.
+            Los gráficos de barras facilitan la comparación visual
+            entre los grupos.
+            """
+        )
+
+    else:
+        st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 8.")
+      
 elif contenido ==("Ítem 9"):
     st.write("✅Te encuentras en el Ítem 9: Análisis basado en parámetros seleccionados")
 else:
