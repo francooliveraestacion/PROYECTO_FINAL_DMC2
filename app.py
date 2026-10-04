@@ -1237,5 +1237,51 @@ else:
             f"mayor Performance Score promedio es **{resultado_mayor_performance}**."
         )
 
+        st.subheader("💡 4. Recomendaciones para la toma de decisiones")
+
+        st.write(
+            """
+            **1. Evaluación por posición:** comparar el rendimiento
+            considerando la posición del jugador, debido a que las
+            funciones y exigencias son diferentes.
+
+            **2. Seguimiento del rendimiento:** utilizar indicadores
+            como Player Rating y Performance Score para complementar
+            la evaluación de los jugadores.
+
+            **3. Análisis físico:** utilizar distancia recorrida y
+            velocidad máxima como indicadores complementarios para
+            analizar la exigencia física de los jugadores.
+
+            **4. Análisis por resultado:** revisar las diferencias de
+            rendimiento según el resultado del partido para identificar
+            patrones relevantes en el desempeño observado.
+
+            **5. Uso de dashboards:** mantener estos indicadores en
+            visualizaciones interactivas para facilitar el seguimiento
+            y apoyar la toma de decisiones basada en datos.
+            """
+        )
+        st.subheader("📝 5. Conclusión del EDA")
+
+        st.write(
+            """
+            El análisis exploratorio permitió identificar diferencias
+            en el rendimiento técnico y físico de los jugadores según
+            diferentes características del partido. Los resultados
+            muestran la importancia de analizar conjuntamente indicadores
+            de rendimiento, posición y actividad física. Estos hallazgos
+            pueden utilizarse como apoyo para la evaluación y seguimiento
+            de jugadores, sin realizar predicciones sobre resultados
+            futuros.
+            """
+        )
+
+    else:
+
+        st.warning(
+            "⚠️ Debes cargar el archivo CSV para realizar el Ítem 10."
+        )
+
 
 
