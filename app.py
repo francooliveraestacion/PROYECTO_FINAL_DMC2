@@ -1273,7 +1273,7 @@ else:
             "descriptiva, sin realizar predicciones."
         )
 
-    else:
+  else:
 
         st.warning(
             "⚠️ Debes cargar el archivo CSV para realizar el Ítem 10."
