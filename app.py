@@ -611,8 +611,8 @@ elif contenido ==("Ítem 7"):
 
         st.write(
             "Este análisis permite comparar el nivel de performance "
-            "de los jugadores según el resultado obtenido en el partido."
-        ) st.subheader("2️⃣ Performance score según resultado del partido")
+            "de los jugadores según el resultado obtenido en el partido.") 
+        st.subheader("2️⃣ Performance score según resultado del partido")
 
         fig, ax = plt.subplots(figsize=(8, 5))
 
