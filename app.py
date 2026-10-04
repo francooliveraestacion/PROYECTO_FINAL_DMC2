@@ -55,7 +55,7 @@ elif contenido ==("Modulo 2"):
         st.subheader("👀 Vista previa del dataset")
         st.dataframe(
             df.head(),
-            use_container_width=True
+            use_container_width=True)
         st.subheader("📐 Dimensiones del dataset")
         filas, columnas = df.shape
         col1, col2 = st.columns(2)
