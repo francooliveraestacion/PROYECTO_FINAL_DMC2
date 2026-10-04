@@ -847,7 +847,7 @@ elif contenido ==("Ítem 9"):
         key="archivo_item9"
     )
 
-     if archivo is not None:
+    if archivo is not None:
 
         df = pd.read_csv(archivo)
 
