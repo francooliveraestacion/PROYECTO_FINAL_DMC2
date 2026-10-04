@@ -358,7 +358,7 @@ elif contenido ==("Ítem 5"):
         "Selecciona el archivo CSV",
         type=["csv"],
         key="archivo_item5")
-     if archivo is not None:
+    if archivo is not None:
 
         df = pd.read_csv(archivo)
 
