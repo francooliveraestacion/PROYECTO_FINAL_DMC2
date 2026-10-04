@@ -280,6 +280,70 @@ elif contenido ==("Ítem 4"):
         df = pd.read_csv(archivo)
 
         st.success("✅ Archivo cargado correctamente.")
+      
+        st.subheader("1️⃣ Conteo de valores faltantes")
+
+        valores_nulos = df.isnull().sum()
+        porcentaje_nulos = (valores_nulos / len(df)) * 100
+
+        tabla_faltantes = pd.DataFrame({
+            "Variable": df.columns,
+            "Valores faltantes": valores_nulos.values,
+            "Porcentaje (%)": porcentaje_nulos.values })
+        tabla_faltantes["Porcentaje (%)"] = tabla_faltantes[
+            "Porcentaje (%)"].round(2)
+
+        st.dataframe(
+            tabla_faltantes,
+            use_container_width=True)
+      
+        st.subheader("2️⃣ Resumen de valores faltantes")
+
+        total_nulos = valores_nulos.sum()
+
+        variables_con_nulos = (valores_nulos > 0).sum()
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.metric(
+                "Total de valores faltantes",
+                total_nulos)
+
+        with col2:
+            st.metric(
+                "Variables con valores faltantes",
+                variables_con_nulos)
+          
+        st.subheader("3️⃣ Visualización de valores faltantes")
+
+        tabla_grafico = tabla_faltantes[
+            tabla_faltantes["Valores faltantes"] > 0 ]
+         if len(tabla_grafico) > 0:
+
+            st.bar_chart( tabla_grafico.set_index("Variable")[ "Valores faltantes"] )
+
+        else:
+
+            st.info( "ℹ️ No existen valores faltantes para visualizar.")
+          
+        st.subheader("4️⃣ Tratamiento de los valores faltantes")
+
+        if total_nulos == 0:
+
+            st.success( "✅ El dataset no presenta valores faltantes. "
+                "Por lo tanto, no es necesario aplicar técnicas de "
+                "imputación o eliminación de registros por valores nulos.")
+
+        else:
+
+            st.warning( "⚠️ Se identificaron valores faltantes. "
+                "Antes de eliminarlos o imputarlos, se debe analizar "
+                "la variable y determinar si los datos faltantes pueden "
+                "afectar el análisis.")
+    else:
+
+        st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 4.")
 
 elif contenido ==("Ítem 5"):
     st.write("✅Te encuentras en el Ítem 5: Distribución de variables numéricas")
