@@ -1150,7 +1150,7 @@ else:
 
         st.pyplot(fig)
         plt.close(fig)
-         st.subheader("🔎 5 hallazgos principales")
+        st.subheader("🔎 5 hallazgos principales")
 
         mejor_rating = (
             df.groupby("position")["player_rating"]
