@@ -1132,6 +1132,64 @@ elif contenido ==("Ítem 9"):
                 "ℹ️ Selecciona al menos una métrica para realizar "
                 "la comparación."
             )
+    st.subheader("📅 6. Análisis temporal")
+
+        if df["match_date"].notna().sum() > 0:
+
+            fecha_min = df["match_date"].min().date()
+            fecha_max = df["match_date"].max().date()
+
+            rango_fechas = st.date_input(
+                "Selecciona el rango de fechas:",
+                value=(fecha_min, fecha_max),
+                min_value=fecha_min,
+                max_value=fecha_max
+            )
+
+            if len(rango_fechas) == 2:
+
+                fecha_inicio = pd.to_datetime(
+                    rango_fechas[0]
+                )
+
+                fecha_fin = pd.to_datetime(
+                    rango_fechas[1]
+                )
+
+                df_temporal = df_filtrado[
+                    (df_filtrado["match_date"] >= fecha_inicio) &
+                    (df_filtrado["match_date"] <= fecha_fin)
+                ]
+
+                st.write(
+                    f"Registros dentro del periodo seleccionado: "
+                    f"**{len(df_temporal)}**"
+                )
+
+                st.dataframe(
+                    df_temporal[
+                        [
+                            "match_date",
+                            "player_name",
+                            "team",
+                            "position",
+                            "player_rating"
+                        ]
+                    ],
+                    use_container_width=True
+                )
+
+        else:
+
+            st.warning(
+                "⚠️ No se encontraron fechas válidas en match_date."
+            )
+
+    else:
+
+        st.warning(
+            "⚠️ Debes cargar el archivo CSV para realizar el Ítem 9."
+        )
 
    
 
