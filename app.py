@@ -1264,7 +1264,7 @@ else:
         )
     st.subheader("📝 5. Conclusión del EDA")
 
-        st.write(
+    st.write(
             """
             El análisis exploratorio permitió identificar diferencias
             en el rendimiento técnico y físico de los jugadores según
