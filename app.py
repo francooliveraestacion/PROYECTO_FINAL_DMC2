@@ -45,12 +45,22 @@ elif contenido ==("Modulo 2"):
 elif contenido ==("Ítem 1"):
   st.write("✅Te encuentras en el Ítem 1: Información general del dataset")
 elif contenido ==("Ítem 2"):
+  st.write("✅Te encuentras en el Ítem 2: Clasificación de variables")
+
+  
 elif contenido ==("Ítem 3"):
+    st.write("✅Te encuentras en el Ítem 3: Estadísticas descriptivas")
 elif contenido ==("Ítem 4"):
+    st.write("✅Te encuentras en el Ítem 4: Análisis de valores faltantes")
 elif contenido ==("Ítem 5"):
+    st.write("✅Te encuentras en el Ítem 5: Distribución de variables numéricas")
 elif contenido ==("Ítem 6"):
+    st.write("✅Te encuentras en el Ítem 6: Análisis de variables categóricas")
 elif contenido ==("Ítem 7"):
+    st.write("✅Te encuentras en el Ítem 7: Análisis bivariado (numérico vs categórico)")
 elif contenido ==("Ítem 8"):
+    st.write("✅Te encuentras en el Ítem 8: Análisis bivariado (categórico vs categórico)")
 elif contenido ==("Ítem 9"):
+    st.write("✅Te encuentras en el Ítem 9: Análisis basado en parámetros seleccionados")
 else:
-  st.write("✅Te encuentras en el Ítem 10: Hallazgos clave")
+    st.write("✅Te encuentras en el Ítem 10: Hallazgos clave")
