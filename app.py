@@ -1182,7 +1182,7 @@ else:
                 round(df["top_speed_kmh"].mean(), 2)
             )
 
-     with col4:
+    with col4:
             st.metric(
                 "Distancia recorrida promedio",
                 round(df["distance_covered_km"].mean(), 2)
