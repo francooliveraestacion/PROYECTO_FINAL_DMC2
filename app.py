@@ -1160,5 +1160,33 @@ else:
 
             plt.close(fig)
 
+       st.subheader("📈 2. Indicadores principales")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            st.metric(
+                "Player Rating promedio",
+                round(df["player_rating"].mean(), 2)
+            )
+
+        with col2:
+            st.metric(
+                "Performance Score promedio",
+                round(df["performance_score"].mean(), 2)
+            )
+
+        with col3:
+            st.metric(
+                "Velocidad máxima promedio",
+                round(df["top_speed_kmh"].mean(), 2)
+            )
+
+        with col4:
+            st.metric(
+                "Distancia recorrida promedio",
+                round(df["distance_covered_km"].mean(), 2)
+            )
+
 
 
