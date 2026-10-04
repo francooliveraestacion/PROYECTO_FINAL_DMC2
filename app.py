@@ -271,7 +271,7 @@ elif contenido ==("Ítem 4"):
     st.write(
         "En este ítem se analizará la cantidad y el porcentaje "
         "de valores faltantes en cada variable del dataset.")
-     archivo = st.file_uploader(
+    archivo = st.file_uploader(
         "Selecciona el archivo CSV",
         type=["csv"],
         key="archivo_item4" )
