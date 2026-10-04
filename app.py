@@ -1126,7 +1126,7 @@ elif contenido ==("Ítem 9"):
                     "el gráfico de comparación."
                 )
 
-        else:
+         else:
 
             st.info(
                 "ℹ️ Selecciona al menos una métrica para realizar "
