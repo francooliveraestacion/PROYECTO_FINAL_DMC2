@@ -935,6 +935,52 @@ elif contenido ==("Ítem 9"):
             )
         ]
 
+        st.subheader("📊 Selección de métricas")
+
+        tipo = st.selectbox(
+            "Tipo de métrica:",
+            ["Ofensivas", "Defensivas", "Físicas"]
+        )
+
+        if tipo == "Ofensivas":
+
+            opciones = [
+                "goals",
+                "assists",
+                "shots",
+                "shots_on_target",
+                "expected_goals_xg",
+                "key_passes"
+            ]
+
+        elif tipo == "Defensivas":
+
+            opciones = [
+                "tackles",
+                "interceptions",
+                "clearances",
+                "blocks",
+                "recoveries",
+                "defensive_actions"
+            ]
+
+        else:
+
+            opciones = [
+                "distance_covered_km",
+                "sprint_distance_km",
+                "top_speed_kmh",
+                "accelerations",
+                "decelerations",
+                "stamina_score"
+            ]
+
+        metricas = st.multiselect(
+            "Selecciona las métricas:",
+            opciones
+        )
+
+
         
 
    
