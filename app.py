@@ -1194,52 +1194,52 @@ else:
     velocidad_promedio = df["top_speed_kmh"].mean()
     distancia_promedio = df["distance_covered_km"].mean()
 
-        posicion_mejor_rating = (
+    posicion_mejor_rating = (
             df.groupby("position")["player_rating"]
             .mean()
             .idxmax()
         )
 
-        posicion_mayor_distancia = (
+    posicion_mayor_distancia = (
             df.groupby("position")["distance_covered_km"]
             .mean()
             .idxmax()
         )
 
-        resultado_mayor_performance = (
+    resultado_mayor_performance = (
             df.groupby("match_result")["performance_score"]
             .mean()
             .idxmax()
         )
 
-        st.write(
+    st.write(
             f"**1. Rating:** El Player Rating promedio registrado "
             f"en el dataset es de **{rating_promedio:.2f}**."
         )
 
-        st.write(
+    st.write(
             f"**2. Performance:** El Performance Score promedio es de "
             f"**{performance_promedio:.2f}**."
         )
 
-        st.write(
+    st.write(
             f"**3. Posición:** La posición con mayor Player Rating "
             f"promedio es **{posicion_mejor_rating}**."
         )
 
-        st.write(
+    st.write(
             f"**4. Actividad física:** La posición con mayor distancia "
             f"recorrida promedio es **{posicion_mayor_distancia}**."
         )
 
-        st.write(
+    st.write(
             f"**5. Resultado:** El resultado de partido asociado con "
             f"mayor Performance Score promedio es **{resultado_mayor_performance}**."
         )
 
-        st.subheader("💡 4. Recomendaciones para la toma de decisiones")
+    st.subheader("💡 4. Recomendaciones para la toma de decisiones")
 
-        st.write(
+    st.write(
             """
             **1. Evaluación por posición:** comparar el rendimiento
             considerando la posición del jugador, debido a que las
@@ -1262,7 +1262,7 @@ else:
             y apoyar la toma de decisiones basada en datos.
             """
         )
-        st.subheader("📝 5. Conclusión del EDA")
+    st.subheader("📝 5. Conclusión del EDA")
 
         st.write(
             """
