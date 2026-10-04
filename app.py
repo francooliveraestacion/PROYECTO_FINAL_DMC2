@@ -40,9 +40,12 @@ de información y el seguimiento de los principales indicadores.
 📉 Matplotlib
 """)
 elif contenido ==("Módulo 2"):
-  st.write("✅Te encuentras en el modulo 2")
   st.title("⚽ FIFA World Cup 2026")
+  st.write("✅Te encuentras en el modulo 2")
   st.subheader("Análisis Exploratorio de Datos")
+  st.header("📂 Módulo 2: Carga del Dataset")
+  st.write("Carga el archivo CSV para comenzar con el análisis exploratorio.")
+
  
   
   
