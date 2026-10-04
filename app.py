@@ -182,6 +182,90 @@ elif contenido ==("Ítem 2"):
         st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 2.")        
 elif contenido ==("Ítem 3"):
     st.write("✅Te encuentras en el Ítem 3: Estadísticas descriptivas")
+    st.write(
+        "En este ítem se analizarán las principales estadísticas "
+        "descriptivas de las variables numéricas del dataset.")
+    archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item3")
+    if archivo is not None:
+
+        df = pd.read_csv(archivo)
+
+        st.success("✅ Archivo cargado correctamente.")
+        
+        
+        st.subheader("1️⃣ Estadísticas descriptivas")
+
+        estadisticas = df.describe()
+
+        st.dataframe(
+            estadisticas,
+            use_container_width=True )
+        st.subheader("2️⃣ Media y mediana")
+
+        datos_numericos = df.select_dtypes(include="number")
+
+        resumen = pd.DataFrame({
+            "Variable": datos_numericos.columns,
+            "Media": datos_numericos.mean().values,
+            "Mediana": datos_numericos.median().values})
+        st.dataframe(resumen,
+            use_container_width=True)
+
+        st.write( "La **media** representa el promedio de los valores, "
+            "mientras que la **mediana** corresponde al valor central "
+            "cuando los datos se ordenan.")
+      
+        st.subheader("3️⃣ Cuartiles y dispersión")
+
+        dispersion = pd.DataFrame({
+            "Variable": datos_numericos.columns,
+            "Q1": datos_numericos.quantile(0.25).values,
+            "Q3": datos_numericos.quantile(0.75).values,
+            "Desviación estándar": datos_numericos.std().values})
+        st.dataframe(
+            dispersion,
+            use_container_width=True)
+
+        st.write(
+            "El **Q1** representa el 25% de los datos y el **Q3** "
+            "representa el 75%. La desviación estándar permite observar "
+            "qué tan dispersos están los valores respecto a la media." )
+      
+        st.subheader("4️⃣ Detección preliminar de valores extremos")
+
+        Q1 = datos_numericos.quantile(0.25)
+        Q3 = datos_numericos.quantile(0.75)
+
+        IQR = Q3 - Q1
+
+        limite_inferior = Q1 - 1.5 * IQR
+        limite_superior = Q3 + 1.5 * IQR
+
+        valores_extremos = (
+            (datos_numericos < limite_inferior) |
+            (datos_numericos > limite_superior)).sum()
+        tabla_extremos = pd.DataFrame({
+            "Variable": datos_numericos.columns,
+            "Valores extremos": valores_extremos.values})
+
+        st.dataframe(
+            tabla_extremos,
+            use_container_width=True)
+
+        st.write(
+            "La detección preliminar identifica valores que se encuentran "
+            "por debajo o por encima de los límites establecidos mediante "
+            "el rango intercuartílico (IQR)." )
+   else:
+
+        st.warning("⚠️ Debes cargar el archivo CSV para realizar el Ítem 3." )
+
+
+
+
 elif contenido ==("Ítem 4"):
     st.write("✅Te encuentras en el Ítem 4: Análisis de valores faltantes")
 elif contenido ==("Ítem 5"):
