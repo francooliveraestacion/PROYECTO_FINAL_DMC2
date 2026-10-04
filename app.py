@@ -1133,9 +1133,9 @@ elif contenido ==("Ítem 9"):
                 "la comparación."
             )
 
-        st.subheader("📅 6. Análisis temporal")
+    st.subheader("📅 6. Análisis temporal")
 
-        if df["match_date"].notna().sum() > 0:
+    if df["match_date"].notna().sum() > 0:
 
             fecha_min = df["match_date"].min().date()
             fecha_max = df["match_date"].max().date()
@@ -1180,7 +1180,7 @@ elif contenido ==("Ítem 9"):
                     use_container_width=True
                 )
 
-        else:
+      else:
 
             st.warning(
                 "⚠️ No se encontraron fechas válidas en match_date."
