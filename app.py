@@ -68,28 +68,17 @@ elif contenido ==("Módulo 2"):
 elif contenido ==("Ítem 1"):
   st.write("✅Te encuentras en el Ítem 1: Información general del dataset")
   st.write(
-    """
-    En este apartado se analiza la estructura general del dataset,
-    los tipos de datos, los valores nulos y los registros duplicados.
-    """
-)
-  st.markdown("### 1️⃣ Información general")
-
-  import io
-
-  buffer = io.StringIO()
-
-  df.info(buf=buffer)
-
-  informacion = buffer.getvalue()
-
-  st.text(informacion)
+        "En este ítem se revisará la información general del dataset, "
+        "los tipos de datos, los valores nulos y los registros duplicados."
+    )
+  archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item1"
+    )
   
-  st.markdown("### 2️⃣ Tipos de datos")
 
-  tipos = pd.DataFrame({ "Variable": df.columns, "Tipo de dato": df.dtypes.astype(str).values})
-
-  st.dataframe(tipos,use_container_width=True)
+  
   
   
 elif contenido ==("Ítem 2"):
