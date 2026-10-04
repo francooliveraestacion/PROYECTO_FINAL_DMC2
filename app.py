@@ -1150,6 +1150,50 @@ else:
 
         st.pyplot(fig)
         plt.close(fig)
+         st.subheader("🔎 5 hallazgos principales")
+
+        mejor_rating = (
+            df.groupby("position")["player_rating"]
+            .mean()
+            .idxmax()
+        )
+
+        mayor_distancia = (
+            df.groupby("position")["distance_covered_km"]
+            .mean()
+            .idxmax()
+        )
+
+        mejor_resultado = (
+            df.groupby("match_result")["performance_score"]
+            .mean()
+            .idxmax()
+        )
+
+        st.write(
+            f"**1.** El Player Rating promedio es "
+            f"**{df['player_rating'].mean():.2f}**."
+        )
+
+        st.write(
+            f"**2.** El Performance Score promedio es "
+            f"**{df['performance_score'].mean():.2f}**."
+        )
+
+        st.write(
+            f"**3.** La posición con mayor Player Rating promedio es "
+            f"**{mejor_rating}**."
+        )
+
+        st.write(
+            f"**4.** La posición con mayor distancia recorrida promedio es "
+            f"**{mayor_distancia}**."
+        )
+
+        st.write(
+            f"**5.** El resultado con mayor Performance Score promedio es "
+            f"**{mejor_resultado}**."
+        )
 
 
 
