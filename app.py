@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import io
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 st.title("⚽ FIFA World Cup 2026")
@@ -347,6 +349,59 @@ elif contenido ==("Ítem 4"):
 
 elif contenido ==("Ítem 5"):
     st.write("✅Te encuentras en el Ítem 5: Distribución de variables numéricas")
+    st.write(
+        "En este ítem se analizará la distribución de variables numéricas "
+        "mediante histogramas, observando su forma, concentración, "
+        "asimetría y posibles valores extremos.")
+
+    archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item5")
+     if archivo is not None:
+
+        df = pd.read_csv(archivo)
+
+        st.success("✅ Archivo cargado correctamente.")
+       
+        variables = [
+            "player_rating",
+            "performance_score",
+            "pass_accuracy",
+            "distance_covered_km",
+            "top_speed_kmh"]
+        st.subheader("1️⃣ Histogramas de las variables")
+
+        for variable in variables:
+
+            st.write(f"### 📌 {variable}")
+
+            fig, ax = plt.subplots(figsize=(8, 4))
+
+            sns.histplot(
+                data=df,
+                x=variable,
+                bins=20,
+                kde=True,
+                ax=ax)
+            ax.set_title(f"Distribución de {variable}")
+            ax.set_xlabel(variable)
+            ax.set_ylabel("Frecuencia")
+
+            st.pyplot(fig)
+
+            plt.close(fig)
+
+        st.subheader("2️⃣ Distribución de variables según posición")
+
+        st.write(
+            "Se revisan las distribuciones por posición para evitar "
+            "comparaciones inadecuadas entre porteros y jugadores de campo.")
+
+        variable_posicion = st.selectbox(
+            "Selecciona una variable:",
+            variables)
+       
 elif contenido ==("Ítem 6"):
     st.write("✅Te encuentras en el Ítem 6: Análisis de variables categóricas")
 elif contenido ==("Ítem 7"):
