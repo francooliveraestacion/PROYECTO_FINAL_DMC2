@@ -12,7 +12,7 @@ contenido=st.sidebar.selectbox("",["Home",
                                    "Ítem 4",
                                   "Ítem 5",
                                   "Ítem 6",
-                                  "Ítem 7",'
+                                  "Ítem 7",
                                   "Ítem 8",
                                   "Ítem 9",
                                   "Ítem 10"])
