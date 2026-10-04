@@ -60,7 +60,7 @@ elif contenido ==("Módulo 2"):
         with col1: st.metric("Número de filas",filas)
 
         with col2:st.metric("Número de columnas",columnas)
-     except Exception as e:
+      except Exception as e:
        st.error( f"❌ Ocurrió un error al cargar el archivo: {e}" )
    else:
     st.warning( "⚠️ Debes cargar un archivo CSV antes de realizar cualquier análisis.")
