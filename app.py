@@ -889,6 +889,33 @@ elif contenido ==("Ítem 9"):
             sorted(df["player_name"].dropna().unique())
         )
 
+         df_filtrado = df.copy()
+
+        if equipos:
+            df_filtrado = df_filtrado[
+                df_filtrado["team"].isin(equipos)
+            ]
+
+        if posiciones:
+            df_filtrado = df_filtrado[
+                df_filtrado["position"].isin(posiciones)
+            ]
+
+        if fases:
+            df_filtrado = df_filtrado[
+                df_filtrado["tournament_stage"].isin(fases)
+            ]
+
+        if resultados:
+            df_filtrado = df_filtrado[
+                df_filtrado["match_result"].isin(resultados)
+            ]
+
+        if jugadores:
+            df_filtrado = df_filtrado[
+                df_filtrado["player_name"].isin(jugadores)
+            ]
+
         
 
    
