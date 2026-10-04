@@ -1181,12 +1181,11 @@ elif contenido ==("Ítem 9"):
                 )
 
     else:
-
             st.warning(
                 "⚠️ No se encontraron fechas válidas en match_date."
             )
 
-  else:
+ else:
         st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 9.")
 
 
