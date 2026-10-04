@@ -448,6 +448,105 @@ elif contenido ==("Ítem 5"):
        
 elif contenido ==("Ítem 6"):
     st.write("✅Te encuentras en el Ítem 6: Análisis de variables categóricas")
+    st.write(
+        "En este ítem se analizarán las variables categóricas mediante "
+        "conteos, proporciones y gráficos de barras."
+    )
+
+    archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item6"
+    )
+    if archivo is not None:
+
+        df = pd.read_csv(archivo)
+
+        st.success("✅ Archivo cargado correctamente.")
+        variables_categoricas = [
+            "position",
+            "team",
+            "tournament_stage",
+            "match_result",
+            "preferred_foot"
+        ]
+        st.subheader("1️⃣ Selección de variable categórica")
+
+        variable = st.selectbox(
+            "Selecciona una variable:",
+            variables_categoricas)
+        t.subheader("2️⃣ Conteo de categorías")
+
+        conteo = df[variable].value_counts()
+
+        tabla_conteo = pd.DataFrame({
+            "Categoría": conteo.index,
+            "Conteo": conteo.values})
+
+        st.dataframe(
+            tabla_conteo,
+            use_container_width=True )
+      
+        st.subheader("3️⃣ Proporción de categorías")
+
+        proporciones = df[variable].value_counts(normalize=True) * 100
+
+        tabla_proporciones = pd.DataFrame({
+            "Categoría": proporciones.index,
+            "Proporción (%)": proporciones.values.round(2)})
+
+        st.dataframe(
+            tabla_proporciones,
+            use_container_width=True )
+      
+        st.subheader("4️⃣ Gráfico de barras")
+
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+        conteo.plot(
+            kind="bar",
+            ax=ax)
+
+        ax.set_title(f"Distribución de {variable}")
+        ax.set_xlabel(variable)
+        ax.set_ylabel("Cantidad")
+
+        plt.xticks(rotation=45)
+
+        st.pyplot(fig)
+
+        plt.close(fig)
+
+        st.subheader("5️⃣ Comparación de categorías")
+
+        categoria_mayor = conteo.idxmax()
+        cantidad_mayor = conteo.max()
+
+        categoria_menor = conteo.idxmin()
+        cantidad_menor = conteo.min()
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.metric(
+                "Categoría con mayor frecuencia",
+                categoria_mayor,
+                cantidad_mayor )
+
+        with col2:
+            st.metric(
+                "Categoría con menor frecuencia",
+                categoria_menor,
+                cantidad_menor)
+
+        st.write(
+            f"La categoría con mayor frecuencia es **{categoria_mayor}**, "
+            f"con **{cantidad_mayor} registros**.")
+  else:
+
+        st.warning("⚠️ Debes cargar el archivo CSV para realizar el Ítem 6.")
+
+
 elif contenido ==("Ítem 7"):
     st.write("✅Te encuentras en el Ítem 7: Análisis bivariado (numérico vs categórico)")
 elif contenido ==("Ítem 8"):
