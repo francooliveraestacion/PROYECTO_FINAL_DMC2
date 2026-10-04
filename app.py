@@ -889,7 +889,7 @@ elif contenido ==("Ítem 9"):
             sorted(df["player_name"].dropna().unique())
         )
 
-         df_filtrado = df.copy()
+        df_filtrado = df.copy()
 
         if equipos:
             df_filtrado = df_filtrado[
