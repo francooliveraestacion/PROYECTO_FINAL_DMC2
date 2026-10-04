@@ -9,6 +9,7 @@ contenido=st.sidebar.selectbox("",["Home",
                                    "Módulo 2",
                                    "Ítem 1",
                                    "Ítem 2",
+                                   "Ítem 3",
                                    "Ítem 4",
                                    "Ítem 5",
                                    "Ítem 6",
@@ -130,13 +131,6 @@ elif contenido ==("Ítem 1"):
             )
   else:
         st.warning("⚠️ Debes cargar el archivo CSV para realizar el Ítem 1.")
-    
-    
-    
-  
-
-  
-  
   
 elif contenido ==("Ítem 2"):
   st.write("✅Te encuentras en el Ítem 2: Clasificación de variables")
@@ -162,6 +156,7 @@ elif contenido ==("Ítem 2"):
                 else:
                     variables_categoricas.append(columna)
             return variables_numericas, variables_categoricas
+         numericas, categoricas = clasificar_variables(df)
        
 
   
