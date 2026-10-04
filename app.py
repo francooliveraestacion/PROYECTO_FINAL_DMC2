@@ -1091,3 +1091,74 @@ elif contenido ==("Ítem 9"):
 
 else:
     st.write("✅Te encuentras en el Ítem 10: Hallazgos clave")
+    st.write(
+        "En este ítem se presentan los principales hallazgos obtenidos "
+        "del análisis exploratorio de datos y algunas recomendaciones "
+        "orientadas a la toma de decisiones."
+    )
+
+    archivo = st.file_uploader(
+        "Selecciona el archivo CSV",
+        type=["csv"],
+        key="archivo_item10"
+    )
+     if archivo is not None:
+
+        df = pd.read_csv(archivo)
+
+        st.success("✅ Archivo cargado correctamente.")
+
+        st.subheader("📊 1. Visualización resumen")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+
+            fig, ax = plt.subplots(figsize=(7, 4))
+
+            sns.histplot(
+                data=df,
+                x="player_rating",
+                bins=20,
+                kde=True,
+                ax=ax
+            )
+
+            ax.set_title("Distribución del Player Rating")
+            ax.set_xlabel("Player Rating")
+            ax.set_ylabel("Frecuencia")
+
+            st.pyplot(fig)
+
+            plt.close(fig)
+
+        with col2:
+
+            promedio_posicion = (
+                df.groupby("position")["performance_score"]
+                .mean()
+                .sort_values(ascending=False)
+            )
+
+            fig, ax = plt.subplots(figsize=(7, 4))
+
+            promedio_posicion.plot(
+                kind="bar",
+                ax=ax
+            )
+
+            ax.set_title(
+                "Performance Score promedio por posición"
+            )
+
+            ax.set_xlabel("Posición")
+            ax.set_ylabel("Performance Score")
+
+            plt.xticks(rotation=45)
+
+            st.pyplot(fig)
+
+            plt.close(fig)
+
+
+
