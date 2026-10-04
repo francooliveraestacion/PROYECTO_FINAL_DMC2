@@ -1180,7 +1180,7 @@ elif contenido ==("Ítem 9"):
                     use_container_width=True
                 )
 
-      else:
+    else:
 
             st.warning(
                 "⚠️ No se encontraron fechas válidas en match_date."
