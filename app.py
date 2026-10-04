@@ -128,7 +128,7 @@ elif contenido ==("Ítem 1"):
             st.warning(
              f"⚠️ Se encontraron {duplicados} registros duplicados."
             )
-    else:
+  else:
         st.warning("⚠️ Debes cargar el archivo CSV para realizar el Ítem 1.")
     
     
