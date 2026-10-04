@@ -704,7 +704,7 @@ elif contenido ==("Ítem 7"):
             específicas de cada posición.
             """
         )
-     else:
+    else:
         st.warning( "⚠️ Debes cargar el archivo CSV para realizar el Ítem 7.")
       
 
