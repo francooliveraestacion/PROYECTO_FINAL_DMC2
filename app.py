@@ -259,7 +259,7 @@ elif contenido ==("Ítem 3"):
             "La detección preliminar identifica valores que se encuentran "
             "por debajo o por encima de los límites establecidos mediante "
             "el rango intercuartílico (IQR)." )
-   else:
+    else:
 
         st.warning("⚠️ Debes cargar el archivo CSV para realizar el Ítem 3." )
 
