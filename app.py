@@ -4,7 +4,7 @@ import io
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title("⚽ FIFA World Cup 2026")
+st.title("⚽ FIFA World Cup 2026⚽")
 st.sidebar.title("🏡Contenido")
 contenido=st.sidebar.selectbox("",["Home",
                                    "Módulo 2",
@@ -22,7 +22,7 @@ if contenido =="Home":
   st.write("Te encuentras en el modulo de home")
   st.subheader("Estudiante")
   st.write ("Franco Olivera Estacion")
-  st.write("Modulo: Python Fundamentals")
+  st.write("Modulo 2 :Python for Analytics")
   st.write("Año:2026")
   st.subheader("Informacion general")
   st.write("""Estudiante de Ingeniería Industrial orientado al análisis de datos,
@@ -30,10 +30,14 @@ automatización y mejora de procesos.
 """)
   st.subheader("Descripcion del proyecto")
   st.write("""
-El proyecto consiste en desarrollar una aplicación web utilizando
-Streamlit para presentar y analizar indicadores relacionados con
-el proceso . La aplicación busca facilitar la visualización
-de información y el seguimiento de los principales indicadores.
+## 📌 Descripción del proyecto
+
+Proyecto de **Análisis Exploratorio de Datos (EDA)** desarrollado con **Python y Streamlit**, 
+utilizando información sobre el rendimiento de jugadores de la **Copa Mundial 2026**. 
+Permite analizar variables técnicas, ofensivas,
+defensivas y físicas mediante estadísticas, filtros y visualizaciones interactivas 
+para obtener hallazgos y apoyar la toma de decisiones.
+
 """)
   st.subheader("Tecnologias utilizadas")
   st.markdown("""
